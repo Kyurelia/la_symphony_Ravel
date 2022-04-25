@@ -1,0 +1,17 @@
+{% block body %}
+    {%for book in books%}
+        <h2 {% if book.available %}
+            class="available"
+        {% else %}
+            class="not-available"
+                {% endif %}>
+
+            {{ book.title }}
+        </h2>
+        <p>Ecrit par {{ book.author.firstname }} {{ book.author.lastname }}</p>
+    {% endfor %}
+{% endblock body %}
+
+
+
+

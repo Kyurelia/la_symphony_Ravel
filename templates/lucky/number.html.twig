@@ -1,0 +1,22 @@
+<style>
+    .availiable {
+        color: green;
+    }
+    .not-availiable {
+        color: red;
+    }
+</style>
+
+
+<h1>Le nombre magique est : {{number}} </h1>
+
+{%for book in books%}
+    <h2 {% if book.availiable %}
+        class="availiable"
+    {% else %}
+        class="not-availiable"
+            {% endif %}>
+
+        {{ book.title }}
+    </h2>
+{% endfor %}
